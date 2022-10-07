@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="partials :: head('homepage')"></head>
+
+<body class="">
+
+
+    <div class="blobs"></div>
+
+    <header class="header container">
+        <nav class="nav">
+            <a href="#" class="nav-brand">
+                <img th:src="@{/images/logo.png}" alt="" class="nav-brand-img">
+                <span class="nav-brand-text">Alchemy</span>
+            </a>
+            <ul class="nav-menu-list">
+                <li class="nav-menu-item"><a href="#" class="nav-menu-link">Serviços</a></li>
+                <li class="nav-menu-item" id="login">
+                    <i class='bx bx-log-in nav-menu-item-icon' ></i>
+                    <a href="#login" class="nav-menu-link">Entrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="section">
+        <div class="section-content" id="image">
+            <div class="purple-pattern"></div>
+            <img th:src="@{/images/header-bg.jpg}" alt="" class="section-bg">
+            <div class="section-content-info">
+                <h3 class="section-content-title">Aprenda a <span class="bold">programar</span> através dos melhores cursos</h3>
+            </div>
+        </div>
+    </section>
+    
+    <img th:src="@{/images/bottompattern.svg}" alt="" class="topsection">
+    <section class="section" id="about">
+        <div class="section-content">
+            <div class="section-content-info">
+                <h3 class="section-content-title"><span class="bold">Por que devo aprender a programar</span>?</h3>
+                <p class="section-content-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolor quidem ex qui officiis ad, sapiente, suscipit non numquam laudantium dolorum beatae? Odit culpa fugit harum quidem voluptatem, assumenda deserunt laborum quia facilis quibusdam repudiandae esse voluptas voluptatibus! Dolor, sequi!</p>
+            </div>
+            <img th:src="@{/images/programming.svg}" alt="" class="section-content-image">
+        </div>
+    </section>
+    <img th:src="@{/images/toppattern.svg}" alt="" class="bottomsection">
+
+    <div class="section section" id="price">
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-name">4,99</h2>
+                <h3 class="card-title">Mensal</h3>
+                <ul class="card-list">
+                    <li class="card-list-item">Acesso a todos os cursos</li>
+                    <li class="card-list-item">Garantia vitalícia</li>
+                    <li class="card-list-item">Desconto de 50%</li>
+                    <li class="card-list-item">Melhor custo benefício do mercado</li>
+                </ul>
+                <a href="#" class="card-button">Assinar</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-name">244,99</h2>
+                <h3 class="card-title">Vitalício</h3>
+                <ul class="card-list">
+                    <li class="card-list-item">Acesso a todos os cursos</li>
+                    <li class="card-list-item">Garantia vitalícia</li>
+                    <li class="card-list-item">Desconto de 50%</li>
+                    <li class="card-list-item">Melhor custo benefício do mercado</li>
+                </ul>
+                <a href="#" class="card-button">Assinar</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h2 class="card-name">59,99</h2>
+                <h3 class="card-title">Anual</h3>
+                <ul class="card-list">
+                    <li class="card-list-item">Acesso a todos os cursos</li>
+                    <li class="card-list-item">Garantia vitalícia</li>
+                    <li class="card-list-item">Desconto de 50%</li>
+                    <li class="card-list-item">Melhor custo benefício do mercado</li>
+                </ul>
+                <a href="#" class="card-button">Assinar</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" th:src="@{/js/vanilla-tilt.js}"></script>
+<script>
+    let loginButton = document.getElementById('login')
+    loginButton.addEventListener('click', () => {
+        window.location.href = '#login'
+    })
+    
+
+    var screenWidth = window.matchMedia("(min-width: 768px)")
+    screenWidth.addListener(() => {
+        VanillaTilt.init(document.querySelector('.section-content'), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1
+        })
+        VanillaTilt.init(document.querySelectorAll('.card'), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1
+        })
+    })
+
+</script>
+
+</html>
